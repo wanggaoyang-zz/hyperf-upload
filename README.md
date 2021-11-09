@@ -18,5 +18,9 @@ php bin/hyperf.php vendor:publish hyperf-wgy/upload
 
 * 注意：local驱动 保证目录具有权限
 
+* 使用：支持文件和图片上传
 
+* POST {{host}}/upload/file  参数：file
+
+* POST {{host}}/upload/image  参数：file
 
