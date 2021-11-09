@@ -1,0 +1,31 @@
+{
+    "name": "hyperf-wgy/upload",
+    "description": "hyperf  upload",
+    "authors": [
+        {
+            "name": "wanggaoyang",
+            "email": "836259740@qq.com"
+        }
+    ],
+    "require": {
+        "hyperf/http-server": "^2.2",
+        "hyperf/di": "^2.2",
+        "hyperf-plus/route": "^2.1",
+        "hyperf/filesystem": "^2.2",
+        "hyperf/flysystem-oss": "^1.0",
+        "hyperf/config": "^2.2"
+    },
+   "autoload":{
+"psr-4":{
+	"Wgy\\Upload\\":"src/"
+},
+"files": [
+      "src/Kernel/Functions.php"
+    ]
+},
+ "extra": {
+        "hyperf": {
+            "config": "Wgy\\Upload\\ConfigProvider"
+        }
+    }
+}
