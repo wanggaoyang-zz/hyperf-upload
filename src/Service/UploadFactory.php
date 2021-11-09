@@ -2,7 +2,7 @@
 
 namespace Wgy\Upload\Service;
 
-use Wgy\Upload\Contract\Exception\BusinessException;
+use UU\Contract\Exception\BusinessException;
 
 class UploadFactory
 {

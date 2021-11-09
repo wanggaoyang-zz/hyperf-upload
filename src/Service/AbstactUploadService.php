@@ -5,7 +5,7 @@ namespace Wgy\Upload\Service;
 
 
 use Hyperf\HttpMessage\Upload\UploadedFile as UploadedFileAlias;
-use Wgy\Upload\Contract\Exception\BusinessException;
+use UU\Contract\Exception\BusinessException;
 use Wgy\Upload\Service\Storage\StorageFactory;
 
 

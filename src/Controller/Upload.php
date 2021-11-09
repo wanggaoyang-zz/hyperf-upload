@@ -6,8 +6,8 @@ use HPlus\Route\Annotation\AdminController;
 use HPlus\Route\Annotation\FormData;
 use HPlus\Route\Annotation\PostApi;
 use Psr\Container\ContainerInterface;
+use UU\Contract\Exception\BusinessException;
 use Wgy\Upload\AbstractController;
-use Wgy\Upload\Contract\Exception\BusinessException;
 use Wgy\Upload\Service\UploadFactory;
 use Wgy\Upload\Service\UploadInterface;
 
