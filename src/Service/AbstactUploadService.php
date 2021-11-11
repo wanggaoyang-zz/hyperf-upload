@@ -13,6 +13,8 @@ abstract class AbstactUploadService implements UploadInterface
 {
     private $config;
 
+    private $file;
+
     /**
      * @var StorageFactory
      */
@@ -27,6 +29,17 @@ abstract class AbstactUploadService implements UploadInterface
     public function getConfig()
     {
         return $this->config;
+    }
+
+    public function setFileConfig($file)
+    {
+        $this->file = $file;
+        return $this->file;
+    }
+
+    public function getFileConfig()
+    {
+        return $this->file;
     }
 
     public function configurate(UploadedFileAlias $file, $fileName = 'image')

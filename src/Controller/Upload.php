@@ -2,8 +2,9 @@
 
 namespace Wgy\Upload\Controller;
 
-use HPlus\Route\Annotation\AdminController;
+use HPlus\Route\Annotation\ApiController;
 use HPlus\Route\Annotation\FormData;
+use HPlus\Route\Annotation\GetApi;
 use HPlus\Route\Annotation\PostApi;
 use Psr\Container\ContainerInterface;
 use UU\Contract\Exception\BusinessException;
@@ -12,7 +13,7 @@ use Wgy\Upload\Service\UploadFactory;
 use Wgy\Upload\Service\UploadInterface;
 
 /**
- * @AdminController(tag="上传管理", description="上传文件或图片")
+ * @ApiController(tag="上传管理", description="上传文件或图片")
  * Class IndexController
  */
 class Upload extends AbstractController
@@ -54,5 +55,13 @@ class Upload extends AbstractController
             throw new BusinessException('参数不能为空');
         }
         return $this->uploadService->saveFiles($file, 'files');
+    }
+
+    /**
+     * @GetApi(path="token/{type:\d+}")
+     */
+    public function token($type)
+    {
+        return $this->uploadService->token($type);
     }
 }

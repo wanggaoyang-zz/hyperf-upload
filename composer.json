@@ -21,7 +21,8 @@
     "hyperf/filesystem": "^2.2",
     "hyperf/flysystem-oss": "^1.0",
     "hyperf/config": "^2.2",
-    "uu/contract": "^1.0"
+    "uu/contract": "^1.0",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

@@ -49,4 +49,13 @@ if (!function_exists('uuid')) {
     }
 }
 
+if (!function_exists('gmt_iso8601')) {
+    function gmt_iso8601($time)
+    {
+        return str_replace('+00:00', '.000Z', gmdate('c', $time));
+    }
+}
+
+
+
 

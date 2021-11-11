@@ -6,6 +6,7 @@ namespace Wgy\Upload\Service;
 
 use Hyperf\HttpMessage\Upload\UploadedFile as UploadedFileAlias;
 use League\Flysystem\Filesystem;
+use UU\Contract\Exception\BusinessException;
 
 class UploadLocalService extends AbstactUploadService
 {
@@ -28,5 +29,10 @@ class UploadLocalService extends AbstactUploadService
             'path' => $file_name,
             'name' => $file->getClientFilename(),
         ];
+    }
+
+    function token($type)
+    {
+        throw new BusinessException('本地驱动不支持直传');
     }
 }

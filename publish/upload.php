@@ -6,7 +6,7 @@ return [
     'host' => '',
     'save_path' => '/upload',
     'uniqueName' => false,
-    // Image and file upload path under the disk above.
+    // 直传目录
     'directory' => [
         'image' => 'images',
         'file' => 'files',
@@ -17,4 +17,8 @@ return [
     'file_mimes' => 'txt,sql,zip,rar,ppt,word,xls,xlsx,doc,docx',
     //文件上传类型
     'image_mimes' => 'jpeg,bmp,png,gif,jpg',
+    //直传回调域名
+    'callback_url' => env('CALLBACK_URL'),
+    //直传token过期时间
+    'token_expire' => env('TOKEN_EXPIRE', 30),
 ];
