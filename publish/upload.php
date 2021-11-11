@@ -8,8 +8,8 @@ return [
     'uniqueName' => false,
     // 直传目录
     'directory' => [
-        'image' => 'images',
-        'file' => 'files',
+        'image' => '',
+        'file' => '',
     ],
     'image_size' => 1024 * 1024 * 5,
     'file_size' => 1024 * 1024 * 5,

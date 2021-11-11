@@ -36,6 +36,7 @@ class UploadOssService extends AbstactUploadService
 
     public function token($type)
     {
+
         if (!in_array($type, [0, 1])) {
             throw new BusinessException('类型值不正确！');
         }
@@ -47,7 +48,7 @@ class UploadOssService extends AbstactUploadService
         $dir = $this->getConfig()['directory'][$typeName[$type]];// 用户上传文件时指定的前缀。
         $callback_param = array(
             'callbackUrl' => $callbackUrl,
-            'callbackBody' => 'filename=${object}&size=${size}&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}',
+            'callbackBody' => 'filename=${object}&size=${size}&type=' . $type . '&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}',
             'callbackBodyType' => "application/x-www-form-urlencoded"
         );
         $callback_string = json_encode($callback_param);
