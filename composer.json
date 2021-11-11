@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": ">=7.4",
-    "hyperf/http-server": "^2.2",
+    "hyperf/http-server": "^2.1",
     "hyperf/di": "^2.2",
     "hyperf-plus/route": "^2.1",
     "hyperf/filesystem": "^2.2",
