@@ -1,6 +1,6 @@
 {
   "name": "hyperf-wgy/upload",
-  "description": "hyperf  upload",
+  "description": "hyperf版本3.0  上传功能",
   "authors": [
     {
       "name": "wanggaoyang",
@@ -14,14 +14,12 @@
     "upload"
   ],
   "require": {
-    "php": ">=7.4",
-    "hyperf/http-server": "^2.2",
-    "hyperf/di": "^2.2",
-    "hyperf-plus/route": "^2.1",
-    "hyperf/filesystem": "^2.2",
+    "php": ">=8.0",
+    "hyperf/http-server": "^3.0",
+    "hyperf/di": "^3.0",
+    "hyperf-plus/route": "^3.0",
+    "hyperf/filesystem": "^3.0",
     "hyperf/flysystem-oss": "^1.0",
-    "hyperf/config": "^2.2",
-    "uu/contract": "^1.0",
     "ext-json": "*"
   },
   "autoload": {
@@ -29,7 +27,7 @@
       "Wgy\\Upload\\": "src/"
     },
     "files": [
-      "src/Kernel/Functions.php"
+      "src/Helper/helpers.php"
     ]
   },
   "extra": {

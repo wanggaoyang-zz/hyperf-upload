@@ -2,25 +2,19 @@
 
 namespace Wgy\Upload\Service;
 
-use UU\Contract\Exception\BusinessException;
 
 class UploadFactory
 {
-    private UploadInterface $upload;
-
-    public function __invoke()
+    /**
+     * @throws \Exception
+     */
+    public static function create()
     {
-        $disk = config('upload')['disk'] ?? 'local';
-        switch ($disk) {
-            case 'local':
-                $this->upload = di(UploadLocalService::class);
-                break;
-            case 'oss':
-                $this->upload = di(UploadOssService::class);
-                break;
-            default:
-                throw new BusinessException('该驱动暂未实现!');
-        }
-        return $this->upload;
+        return match (\Hyperf\Config\config('upload')['disk'] ?? 'oss') {
+            'oss' => di(OssDriveService::class)(),
+            default => throw new \Exception('该驱动暂未实现!'),
+        };
+
+
     }
 }

@@ -2,7 +2,7 @@
 
 return [
     // Disk in `config/filesystem.php`.
-    'disk' => 'local',
+    'disk' => 'oss',
     'host' => '',
     'save_path' => '/upload',
     'uniqueName' => false,
