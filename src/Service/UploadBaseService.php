@@ -48,7 +48,7 @@ abstract class UploadBaseService implements UploadInterface
                 if ($file->getSize() > $fileSize) {
                     throw new Exception('文件不能大于！' . ($fileSize / 1024 / 1024) . 'MB');
                 }
-                $imageMimes = explode(',', $this->config['image_mimes'] ?? 'jpeg,bmp,png,gif,jpg');
+                $imageMimes = explode(',', $this->getUploadConfig()['image_mimes'] ?? 'jpeg,bmp,png,gif,jpg');
                 if (!in_array(strtolower($file->getExtension()), $imageMimes)) {
                     throw new Exception('后缀不允许！');
                 }
@@ -63,7 +63,7 @@ abstract class UploadBaseService implements UploadInterface
                     throw new Exception('文件不能大于！' . ($fileSize / 1024 / 1024) . 'MB');
                 }
                 #检测类型
-                $imageMimes = explode(',', $this->config['file_mimes'] ?? 'txt,sql,zip,rar,ppt,word,xls,xlsx,doc,docx');
+                $imageMimes = explode(',', $this->getUploadConfig()['file_mimes'] ?? 'txt,sql,zip,rar,ppt,word,xls,xlsx,doc,docx');
                 if (!in_array(strtolower($file->getExtension()), $imageMimes)) {
                     throw new Exception('类型不允许！');
                 }
