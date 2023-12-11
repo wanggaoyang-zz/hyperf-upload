@@ -28,6 +28,13 @@ class Upload extends AbstractController
         $this->uploadService = UploadFactory::create();
     }
 
+    #[PostApi(summary: "oss回调")]
+    public function callback()
+    {
+        $data = $this->request->all();
+        return $this->uploadService->callback($data);
+    }
+
     #[PostApi(path: "file")]
     #[RequestValidation(rules: [
         "file|文件"=> "require|file",

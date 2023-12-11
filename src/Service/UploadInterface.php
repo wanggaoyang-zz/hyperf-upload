@@ -18,5 +18,5 @@ interface UploadInterface
     function saveFiles(UploadedFile $file, $fileName): array;
 
     function token(string $typeName);
-
+    function callback(array $data);
 }
