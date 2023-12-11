@@ -72,4 +72,17 @@ class OssDriveService extends UploadBaseService implements UploadInterface
         $response['filename'] = time() . round(100, 999);
         return $response;
     }
+
+    public function callback(array $data)
+    {
+        $config =  $this->getUploadConfig();
+        $fileConfig = $this->getDriveConfig();
+        $host = !empty($config['host']) ? $config['host'] : 'https://' . $fileConfig['bucket'] . '.' . $fileConfig['endpoint'];
+        $path = $host . '/' . $data['filename'];
+        return [
+            'path' => $path,
+            'name' => substr($data['filename'], strrpos($data['filename'], '/') + 1),
+            'size' => $data['size'] ?? -1,
+        ];
+    }
 }
